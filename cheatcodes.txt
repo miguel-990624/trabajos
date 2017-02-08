@@ -1,0 +1,34 @@
+/// supernova
+
+supernova = keyboard_check(ord('B'));
+if(supernova && nova){
+    audio_play_sound(snd_exploEnemy1, 10, false);
+    with(obj_enemy_1){instance_destroy();}
+    with(obj_enemy_2){instance_destroy();}
+    with(obj_enemy_3){instance_destroy();}
+    with(obj_enemy_4){instance_destroy();}
+    with(obj_enemy_1){instance_destroy();}
+    with(obj_enemyBullet1){instance_destroy();}
+    with(obj_enemyBullet2){instance_destroy();}
+    instance_creae(0, 0, obj_supernova);}
+    }
+
+// programacion powerup con 1/2 de probabilidad
+var probabilidadpowerup = floor(random(2)+1);
+if (probabilidadpowerup == 1)
+    {instance_change(obj_powerup_shoot, false);}
+else{instance_create(x, y, objexploEnemy1);
+    instance_destroy();
+
+/// Disparar
+disparar = keyboard_check(vk_space);
+if(disparar){
+    if(canshoot){
+        instance_create(x, y, obj_bullet);
+        canshoot = 0;
+        alarm 0  = 15;
+        if(arma1){        // Disparos Multiples - arma1
+            bala2 = instance_create(x, y, obj_bullet);
+            bala2.direction = 60;
+            bala3 = instance_create(x, y, obj_bullet);
+            bala3.direction = 120;
